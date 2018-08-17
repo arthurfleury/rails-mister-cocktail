@@ -14,7 +14,7 @@
   <body>
     <div class="navbar-wagon">
   <!-- Logo -->
-  <%= image_tag "picture.jpg", alt: "Beer", width: 100 %>
+  <%= image_tag "logo-bar-2.jpg", alt: "Logo Bar", width: 100 %>
   <h1> The Best Cocktails Ever</h1>
 
 
@@ -30,8 +30,8 @@
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to " Add a new cocktail", new_cocktail_path %></li>
+          <li> <%= link_to " All your cocktails", cocktails_path %></li>
           <li><a href="#">Log Out</a></li>
         </ul>
       </div>
@@ -50,6 +50,9 @@
     </div>
   </div>
 </div>
+
+
+
     <%= yield %>
       <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
       <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->

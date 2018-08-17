@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Dose.destroy_all
+Ingredient.destroy_all
+Cocktail.destroy_all
 
-Dose.create(description: "youhou")
-Cocktail.create(name: "bloody mary")
 
-Dose.create(description: "6 cL", cocktail_id: 1, ingredient_id: 1)
+puts "C'est fini"
+
+url_mojito = "https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/mojito-549832/6706092-9-fre-FR/Mojito.jpg"
+mojito = Cocktail.create(name: "Mojito")
+mojito.remote_photo_url = url_mojito
+mojito.save

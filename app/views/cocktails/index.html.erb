@@ -1,8 +1,23 @@
+<div class="home-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1502819126416-d387f86d47a1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=09f8419d4dfe16155bb399f0e7ea2069&w=1000&q=80');">
+  <h1>Best Cocktails</h1>
+  <p>
+      <span id="banner-typed-text"></span>
+    </p>
+</div>
+
+<div class= container>
+<br>
 <h1>My list of cocktails</h1>
+<br>
 
 <ul>
 <% @cocktails.each do |cocktail| %>
-  <li> <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %> </li>
+
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo %>);">
+           <div class="card-category"><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id)%></div>
+         </div>
+       </div>
 
 <% end %>
 </ul>
@@ -10,3 +25,4 @@
 <%= link_to "+ Add a new cocktail", new_cocktail_path %>
 
 
+  </div>
